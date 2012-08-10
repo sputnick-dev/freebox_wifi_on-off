@@ -6,7 +6,7 @@ Script Perl qui allume ou eteint le module wifi de la freebox à distance en lig
 Sous Debian et dérivés :
 ```bash
 sudo apt-get update
-sudo apt-get install libhtml-treebuilder-xpath-perl libwww-mechanize-perl
+sudo apt-get install git libnet-ssleay-perl libhtml-treebuilder-xpath-perl libwww-mechanize-perl
 git clone https://github.com/sputnick-dev/freebox_wifi_on-off.git
 cd freebox_wifi_on-off
 chmod +x freebox_wifi_on-off.pl
