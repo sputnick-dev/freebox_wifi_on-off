@@ -16,7 +16,7 @@
 <?php
 if (isset($_REQUEST['mode'])) {
     $mode = $_REQUEST['mode'];
-    echo "Sending free-wifi-module-switch.pl $mode";
+    echo "Sending freebox_wifi_on-off.pl $mode";
     exec("/usr/bin/perl /PATH/TO/freebox_wifi_on-off.pl $mode 2>&1");
 }
 else echo("Usage:<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=on<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=off");
