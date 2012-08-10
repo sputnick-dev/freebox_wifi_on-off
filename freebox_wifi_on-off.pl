@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------
 #
 
-# 2012-08-10 18:43:49.0 +0200 / sputnick <gilles.quenot *AT* gmail>
+# 2012-08-10 18:47:28.0 +0200 / sputnick <gilles.quenot *AT* gmail>
 
 # variables a renseigner : interface web de free
 my $login = ''; my $password = '';
@@ -67,7 +67,11 @@ elsif ($ARGV[0] eq "on") {
     postIt($m, 0, 1);
 }
 elsif ($ARGV[0] eq "switch") {
-    postIt($m, switch( $tree->findvalue( './/*[@name="wifi_disable_radio"]/@value' )), switch( $tree->findvalue( './/*[@id="wifi_enable_check"]/@value' )));
+    postIt(
+        $m,
+        switch( $tree->findvalue( './/*[@name="wifi_disable_radio"]/@value' )),
+        switch( $tree->findvalue( './/*[@id="wifi_enable_check"]/@value' ))
+    );
 }
 else {
     die "Mauvais argument\n";
@@ -109,5 +113,9 @@ sub postIt {
         print "POST fails :/\n";
     }
 
-    $have_X10 eq "yes" ? exec("sudo heyu off freebox; sudo heyu on freebox") : print "Vous pouvez redemarrer la freebox\n";
+    $have_X10 eq "yes" ? exec("
+        sudo heyu off freebox; sudo heyu on freebox"
+    ) : print(
+        "Vous pouvez redemarrer la freebox\n"
+    );
 }
