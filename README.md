@@ -11,6 +11,7 @@ git clone https://github.com/sputnick-dev/freebox_wifi_on-off.git
 cd freebox_wifi_on-off
 chmod +x freebox_wifi_on-off.pl
 ./freebox_wifi_on-off.pl
+Usage : ./free-wifi_on-off.pl <on>|<off>|<switch>|<status>
 ```
 
 Il est prévu à la base pour une utilisation avec le protocole de domotique X10 http://fr.wikipedia.org/wiki/X10_%28informatique%29 afin de redémarrer la Freebox automatiquement.
