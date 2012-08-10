@@ -19,7 +19,7 @@ Il est prévu à la base pour une utilisation avec le protocole de domotique X10
 Sans X10, il modifie pour vous la console web free.fr sans rebooter la freebox.
 
 
-Pour ceux qui veulent appeller le script depuis une page web, vous pouvez utiliser la page php freebox_wifi_on-off.php. Il faut adapter les PATH dans le script et configurer sudo :
+Pour ceux qui veulent appeller le script depuis une page web (pratique pour avoir le wifi facilement depuis votre smartphone), vous pouvez utiliser la page php freebox_wifi_on-off.php. Il faut adapter les PATH dans le script et configurer sudo :
 Chez moi, après avoir tapé visudo : 
 ```bash
 Host_Alias LOCAL=10.0.0.1
