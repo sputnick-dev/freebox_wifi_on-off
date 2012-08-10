@@ -13,7 +13,7 @@
 # ------------------------------------------------------------------
 #
 
-# 2012-08-10 16:37:30.0 +0200 / sputnick <gilles.quenot *AT* gmail>
+# 2012-08-10 17:05:25.0 +0200 / sputnick <gilles.quenot *AT* gmail>
 
 # variables à renseigner : interface web de free
 my $login = ''; my $password = '';
@@ -35,9 +35,9 @@ my $m = WWW::Mechanize->new( autocheck => 1 );
 $m->agent_alias( 'Linux Mozilla' );
 $m->get($loginURL);
 $m->submit_form( fields => {
-		login => $login,
+        login => $login,
         pass => $password
-	}
+    }
 );
 my $authreply = $m->content( format => 'text' );
 die("Authentification erronée\n") if $authreply =~ /Identifiant incorrect/i;
@@ -48,17 +48,17 @@ my $tree = HTML::TreeBuilder::XPath->new_from_content( $m->content );
 if ($ARGV[0] eq "status") {
     my $switch = $tree->findvalue( './/*[@name="wifi_disable_radio"]/@value' );
 
-	if ($switch == 0) {
-		print "Wifi enabled...\n";
-	}
-	elsif ($switch == 1) {
-		print "Wifi disabled...\n";
-	}
-	else {
-		die "Le site de free a change : Merci de me remonter le BUG !\n";
-	}
+    if ($switch == 0) {
+        print "Wifi enabled...\n";
+    }
+    elsif ($switch == 1) {
+        print "Wifi disabled...\n";
+    }
+    else {
+        die "Le site de free a change : Merci de me remonter le BUG !\n";
+    }
 
-	exit(0);
+    exit(0);
 }
 elsif ($ARGV[0] eq "off") {
     my $rand = $tree->findvalue( './/*[@id="fbxcfgwww_wifi_random"]/@value' );
@@ -108,7 +108,7 @@ elsif ($ARGV[0] eq "on") {
             wifi_key            => $tree->findvalue( './/*[@id="fbxcfgwww_wifi_text_1"]/@value' ),
             action              => 'update',
             tpl                 => 'wifi'
-    
+
         ]
     );
 
@@ -138,7 +138,7 @@ elsif ($ARGV[0] eq "switch") {
             wifi_key            => $tree->findvalue( './/*[@id="fbxcfgwww_wifi_text_1"]/@value' ),
             action              => 'update',
             tpl                 => 'wifi'
-    
+
         ]
     );
 
@@ -151,7 +151,7 @@ elsif ($ARGV[0] eq "switch") {
     $have_X10 eq "yes" ? exec("sudo heyu off freebox; sudo heyu on freebox") : print "Vous pouvez redemarrer la freebox\n";
 }
 else {
-	die "Mauvais argument\n";
+    die "Mauvais argument\n";
 }
 
 sub switch {
