@@ -4,10 +4,15 @@
 <head>
 <style type="text/css">
   body {
-    background-color: black;
-    color:white;
-    font: 32px Arial, Helvetica, sans-serif;
-    }
+	background-color: black;
+	color:white;
+	font: 32px Arial, Helvetica, sans-serif;
+	}
+    h1 {
+	background-color: black;
+	color:red;
+	font: 52px Arial, Helvetica, sans-serif;
+	}
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Wifi switch</title>
@@ -15,11 +20,13 @@
 <body>
 <?php
 if (isset($_REQUEST['mode'])) {
-    $mode = $_REQUEST['mode'];
-    echo "Sending freebox_wifi_on-off.pl $mode";
-    exec("/usr/bin/perl /PATH/TO/freebox_wifi_on-off.pl $mode 2>&1");
+	$mode = $_REQUEST['mode'];
+	echo "Sending mode $mode";
+    if ($mode == 'status') { echo "<h1>status"; }
+	system("/usr/bin/perl /home/sputnick/repository/perl/free-wifi_on-off.pl $mode 2>&1");
+    if ($mode == 'status') { echo "</h1> "; }
 }
-else echo("Usage:<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=on<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=off");
+else echo("Usage:<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=on<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=off<br>http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}?mode=status");
 ?>
 </body>
 </html>
