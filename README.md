@@ -3,6 +3,7 @@ freebox_wifi_on-off
 
 Script Perl qui allume ou eteint le module wifi de la freebox V5 à distance en ligne de commande et/ou via interface web.
 
+(Je n'ai jamais eu l'occasion d'avoir une freebox V6 en ma possession : c'est plus simple pour rebooter et pas besoin de X10, voir http://www.samn0.fr/index.php/tag/redemarrer-freebox-a-distance )
 
 Sous Debian et dérivés (GNU/Linux) :
 ```bash
