@@ -27,9 +27,10 @@ Les prérequis sont :
  - du matériel X10 (si on veux pouvoir rebooter la freebox automatiquement). Sans X10, il modifie pour vous la console web free.fr sans rebooter la freebox. Voir http://fr.wikipedia.org/wiki/X10_%28informatique%29
  - des connaissances rudimentaires en administration système
 
-Chez moi, après avoir tapé visudo : 
+Il faut aussi adapter les PATH dans le script et configurer sudo :
+
+chez moi, après avoir tapé visudo : 
 ```bash
 Host_Alias LOCAL=10.0.0.1
 http            LOCAL=NOPASSWD: /usr/bin/heyu
 ```
-Il faut aussi adapter les PATH dans le script et configurer sudo :
