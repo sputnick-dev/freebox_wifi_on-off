@@ -1,15 +1,10 @@
 #!/usr/bin/env perl
 # ------------------------------------------------------------------
-#    made by sputnick in da FreAkY lAb (c) 2009-2012
-#    gilles.quenot <AT> gmail <DOT> com
+#    gilles.quenot <AT> quenot <DOT> cfr
 #
 #    This program is free software; you can redistribute it and/or
 #    modify it under the terms of version 2 of the GNU General Public
 #    License published by the Free Software Foundation.
-# ------------------------------------------------------------------
-#                                                ,,_
-#                                               o"  )@
-#                                                ''''
 # ------------------------------------------------------------------
 #
 
